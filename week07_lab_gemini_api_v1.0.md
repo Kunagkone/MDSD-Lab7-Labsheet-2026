@@ -461,9 +461,12 @@ flutter run
 
 > ✅ **Checkpoint 0.1** ถ่ายภาพหน้าจอ 2 ภาพ คือ (ก) หน้า Home ที่แสดงรายการสินค้าจริงจาก API และ (ข) หน้า Checkout ที่มีสินค้าที่เพิ่มไว้ เป็นหลักฐานว่าโปรเจกต์ตั้งต้นถูกต้องสมบูรณ์ก่อนเริ่มทำเนื้อหา Gemini API ต่อ
 
-```text
+``text
 บันทึกรูปผลลัพธ์ที่นี่
-```
+<img width="1917" height="1020" alt="image" src="https://github.com/user-attachments/assets/d93a73bc-be79-4d60-baf2-92eae2da29ca" />
+<img width="1917" height="955" alt="image" src="https://github.com/user-attachments/assets/07b454a5-743b-4936-bcdf-ab8a8174eded" />
+
+`
 
 > ⚠️ ถ้าหน้าจอ Home แสดง Error เช่น "ไม่สามารถโหลดรายการสินค้าได้ (สถานะ 523)" ไม่ใช่ปัญหาจากไฟล์ที่คัดลอกมา แต่เป็น Fake Store API (fakestoreapi.com) ล่มชั่วคราว (Error ของ Cloudflare ที่แปลว่าเซิร์ฟเวอร์ต้นทางเข้าไม่ถึง) ให้รอแล้วลองใหม่ หรือแจ้งอาจารย์/TA เพื่อขอไฟล์ `ItemRepositoryMock` สำรองไว้ทดสอบโดยไม่ง้อเครือข่าย
 
@@ -494,9 +497,12 @@ flutter run
 
 > ✅ **Checkpoint 1.1** ถ่ายภาพหน้าจอ Google AI Studio ที่แสดงรูปภาพที่แนบ Prompt ที่ใช้ และผลลัพธ์ JSON ที่ได้ จากนั้นทดลองรันซ้ำอีก 2 ครั้งด้วยภาพและ Prompt เดิม
 
-```text
+``text
 บันทึกรูปผลลัพธ์ที่นี่
-```
+<img width="1917" height="875" alt="image" src="https://github.com/user-attachments/assets/c31d9fe3-81ec-4ed7-8930-197027ef34e6" />
+<img width="637" height="505" alt="image" src="https://github.com/user-attachments/assets/574f62f2-5d9f-4adb-bc11-1c7ab0e17560" />
+
+``
 
 ### ขั้นตอนที่ 1.2: ทดลองเปิดใช้ Structured Output ใน AI Studio
 
@@ -504,9 +510,14 @@ flutter run
 
 > ✅ **Checkpoint 1.2** ถ่ายภาพหน้าจอที่แสดงการตั้งค่า Structured Output และผลลัพธ์ที่ได้ อธิบายว่าผลลัพธ์ที่ได้ต่างจากตอนไม่เปิด Structured Output ในขั้นตอน 1.1 อย่างไร (อ้างอิงบทหนังสือเรียนหัวข้อ 7.4)
 
-```text
+``text
 บันทึกผลลัพธ์ที่นี่
-```
+<img width="1917" height="876" alt="image" src="https://github.com/user-attachments/assets/6efab3e0-4d8b-4a38-9df5-3accce2e114c" />
+<img width="1912" height="861" alt="image" src="https://github.com/user-attachments/assets/57307599-0ba5-4d41-8e0d-ddce0f9d6c65" />
+
+ตอนไม่เปิด Structured Output (ขั้นตอน 1.1): โมเดลจะพยายามตอบเป็น JSON ตามคำสั่งใน Prompt แต่อาจมีโอกาสหลุดข้อความเกริ่นนำ/ข้อความปิดท้าย เช่น "Here is your JSON:" หรืออาจใส่ Markdown Code Block (json ... ) มาด้วย รวมถึงมีความเสี่ยงที่โครงสร้าง Key หรือ Syntax ของ JSON จะคลาดเคลื่อนหากโมเดลประมวลผลผิดพลาด   ตอนเปิด Structured Output (ขั้นตอน 1.2): ระบบของ Gemini API จะบังคับ Output (Enforce Schema) ในระดับโมเดล ทำให้คำตอบที่ได้ถูกการันตีว่าจะอยู่ในรูปแบบ JSON Object ที่มี Field title, category, และ description ตรงตาม Schema ที่กำหนดไว้ 100% ไม่มีข้อความอื่นปะปน ช่วยให้ฝั่งแอปพลิเคชัน (Flutter) นำข้อความไปทำ jsonDecode() ได้อย่างปลอดภัยโดยไม่เกิด FormatException
+
+`
 
 ---
 
@@ -531,9 +542,11 @@ flutter run
 
 > ✅ **Checkpoint 2.1** รันแอปด้วยคำสั่ง `flutter run --dart-define=GEMINI_API_KEY=your_key` ถ่ายภาพหน้าจอ Debug Console และหน้า SnackBar ที่แสดงข้อความคำตอบจาก Gemini และอธิบายด้านล่าง ว่า `.timeout()` ที่ตั้งไว้กับ Gemini API (20 วินาที) ต่างจากที่ตั้งไว้กับ OpenWeather API ในสัปดาห์ที่แล้ว (10 วินาที) อย่างไร และทำไมจึงต่างกัน (อ้างอิงบทหนังสือเรียนหัวข้อ 7.3)
 
-```text
+``text
 บันทึกผลลัพธ์ที่นี่
-```
+<img width="1608" height="973" alt="image" src="https://github.com/user-attachments/assets/fd31296f-1134-4f85-b07b-9536b74570ea" />
+Timeout: .timeout(Duration(seconds: 20)) ของ Gemini ยาวกว่า OpenWeather (10 วินาที) เพราะ Generative AI ต้องใช้เวลาในการประมวลผลโมเดล (Inference) และสร้างข้อความตอบกลับตามบริบท ซึ่งใช้เวลามากกว่าการดึงข้อมูลสถิติ/สภาพอากาศที่ดึงค่าตรงๆ จาก Database
+`
 
 ---
 
