@@ -912,6 +912,9 @@ class MyApp extends StatelessWidget {
 
 ``text
 บันทึกผลลัพธ์ที่นี่
+<img width="1331" height="971" alt="image" src="https://github.com/user-attachments/assets/150efa5b-d36d-45ef-9e95-fa9f9a2266a9" />
+<img width="1292" height="948" alt="image" src="https://github.com/user-attachments/assets/bac3df38-3fb3-4299-8d96-a2ff23bdf10b" />
+<img width="1151" height="923" alt="image" src="https://github.com/user-attachments/assets/513f7879-ada7-4199-970b-1e48954d73b0" />
 
 
 `
